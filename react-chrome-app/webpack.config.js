@@ -1,8 +1,12 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.tsx",
-  mode: process.env.NODE_ENV || 'development',
+  entry: {
+    content: "./src/index.tsx",
+    background: "./src/background.tsx",
+    popup: "./src/popup.tsx",
+  },
+  mode: "production",
   module: {
     rules: [
       {
@@ -17,15 +21,17 @@ module.exports = {
         ],
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: "content.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "..", "extension"),
   },
-  devtool: 'source-map',
-  target: 'web',
 };

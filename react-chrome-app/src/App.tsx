@@ -1,5 +1,6 @@
 
 function App() {
+  console.log("was here not sure why its not working.")
   return (
     <div>
       <header>
