@@ -14,5 +14,19 @@
                 "content.js"
             ]
         }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "React Chrome Extension"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "popup.js"
+            ],
+            "matches": [
+                "*://*/*"
+            ]
+        }
     ]
 }
