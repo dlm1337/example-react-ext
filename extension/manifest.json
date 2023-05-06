@@ -3,19 +3,16 @@
     "version": "1.0.0",
     "manifest_version": 3,
     "background": {
-      "service_worker": "background.js"
+        "service_worker": "background.js"
     },
     "content_scripts": [
-      {
-        "matches": [
-          "*://*/*"
-        ],
-        "js": [
-          "content.js"
-        ]
-      }
-    ],
-    "action": {
-      "default_popup": "popup.html"
-    }
-  }
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
