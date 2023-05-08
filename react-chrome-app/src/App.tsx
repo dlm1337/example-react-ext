@@ -1,11 +1,18 @@
+import { useState } from 'react';
+import './App.css'
 
 function App() {
-  console.log("was here not sure why its not working.")
+  const [count, setCount] = useState(0);
+
+  const incrementCount = () => {
+    setCount(count + 1);
+  };
+
   return (
     <div>
-      <header>
-        <h5>Hello From React App</h5>
-      </header>
+      <h1>Sample React SPA</h1>
+      <p>Count: {count}</p>
+      <button className="button" onClick={incrementCount}>Increment Count</button>
     </div>
   );
 }

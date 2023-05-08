@@ -1,1 +1,1 @@
-!function(){"use strict";console.log("Background script running!")}();
+!function(){"use strict";console.log("Background script running!"),chrome.runtime.onMessage.addListener((function(e,n,o){console.log(e.greeting),chrome.runtime.connect({name:"popup"}).postMessage({message:"Hello from background script!"})}))}();
