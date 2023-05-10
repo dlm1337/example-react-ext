@@ -4,19 +4,6 @@ import './index.css';
 import App from './App';
 
 
-
-chrome.runtime.sendMessage({ greeting: "Hello from index(popup) script!" });
-
-// Listen for the connect event
-chrome.runtime.onConnect.addListener((port) => {
-  console.log('Connected to background script');
-
-  // Listen for messages from the background script
-  port.onMessage.addListener((message) => {
-    console.log('Received message from background script:', message);
-  });
-});
-
 const mountApp = () => {
   const rootElement = document.createElement('div');
   rootElement.id = 'react-chrome-app';
@@ -52,3 +39,16 @@ const mountApp = () => {
 };
 
 mountApp();
+
+
+chrome.runtime.sendMessage({ popupStart: "Hello from index(popup) script!" });
+
+// Listen for the connect event
+chrome.runtime.onConnect.addListener((port) => {
+  console.log('Connected to background script');
+
+  // Listen for messages from the background script
+  port.onMessage.addListener((message) => {
+    console.log('Received message from background script:', message);
+  });
+});

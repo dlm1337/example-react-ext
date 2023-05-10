@@ -1,1 +1,1 @@
-!function(){"use strict";alert("content is being injected.")}();
+!function(){"use strict";alert("content is being injected.");var e=chrome.runtime.connect();e.postMessage({type:"contentScriptMessage",data:document.documentElement.outerHTML}),e.onMessage.addListener((function(e){console.log("Received message from background script:",e)}))}();
